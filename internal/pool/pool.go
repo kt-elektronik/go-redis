@@ -8,9 +8,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal"
-	"github.com/redis/go-redis/v9/internal/proto"
-	"github.com/redis/go-redis/v9/internal/rand"
+	"github.com/kt-elektronik/go-redis/v9/internal"
+	"github.com/kt-elektronik/go-redis/v9/internal/proto"
+	"github.com/kt-elektronik/go-redis/v9/internal/rand"
 )
 
 // Connection close reason constants for metrics.

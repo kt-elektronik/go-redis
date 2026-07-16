@@ -1,5 +1,5 @@
-// EXAMPLE: query_ft
-// HIDE_START
+kt-elektronik/go-redis EXAMPLE: query_ft
+kt-elektronik/go-redis HIDE_START
 package example_commands_test
 
 import (
@@ -15,17 +15,17 @@ func ExampleClient_query_ft() {
 
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
-		Password: "", // no password docs
-		DB:       0,  // use default DB
+		Password: "", kt-elektronik/go-redis no password docs
+		DB:       0,  kt-elektronik/go-redis use default DB
 		Protocol: 2,
 	})
-	// HIDE_END
-	// REMOVE_START
-	// start with fresh database
+	kt-elektronik/go-redis HIDE_END
+	kt-elektronik/go-redis REMOVE_START
+	kt-elektronik/go-redis start with fresh database
 	rdb.FlushDB(ctx)
 	rdb.FTDropIndex(ctx, "idx:bicycle")
 	rdb.FTDropIndex(ctx, "idx:email")
-	// REMOVE_END
+	kt-elektronik/go-redis REMOVE_END
 
 	_, err := rdb.FTCreate(ctx, "idx:bicycle",
 		&redis.FTCreateOptions{
@@ -223,7 +223,7 @@ func ExampleClient_query_ft() {
 		}
 	}
 
-	// STEP_START ft1
+	kt-elektronik/go-redis STEP_START ft1
 	res1, err := rdb.FTSearch(ctx,
 		"idx:bicycle", "@description: kids",
 	).Result()
@@ -232,7 +232,7 @@ func ExampleClient_query_ft() {
 		panic(err)
 	}
 
-	fmt.Println(res1.Total) // >>> 2
+	fmt.Println(res1.Total) kt-elektronik/go-redis >>> 2
 
 	sort.Slice(res1.Docs, func(i, j int) bool {
 		return res1.Docs[i].ID < res1.Docs[j].ID
@@ -241,11 +241,11 @@ func ExampleClient_query_ft() {
 	for _, doc := range res1.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:1
-	// >>> bicycle:2
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:1
+	kt-elektronik/go-redis >>> bicycle:2
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START ft2
+	kt-elektronik/go-redis STEP_START ft2
 	res2, err := rdb.FTSearch(ctx,
 		"idx:bicycle", "@model: ka*",
 	).Result()
@@ -254,15 +254,15 @@ func ExampleClient_query_ft() {
 		panic(err)
 	}
 
-	fmt.Println(res2.Total) // >>> 1
+	fmt.Println(res2.Total) kt-elektronik/go-redis >>> 1
 
 	for _, doc := range res2.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:4
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:4
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START ft3
+	kt-elektronik/go-redis STEP_START ft3
 	res3, err := rdb.FTSearch(ctx,
 		"idx:bicycle", "@brand: *bikes",
 	).Result()
@@ -271,7 +271,7 @@ func ExampleClient_query_ft() {
 		panic(err)
 	}
 
-	fmt.Println(res3.Total) // >>> 2
+	fmt.Println(res3.Total) kt-elektronik/go-redis >>> 2
 
 	sort.Slice(res3.Docs, func(i, j int) bool {
 		return res3.Docs[i].ID < res3.Docs[j].ID
@@ -279,11 +279,11 @@ func ExampleClient_query_ft() {
 	for _, doc := range res3.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:4
-	// >>> bicycle:6
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:4
+	kt-elektronik/go-redis >>> bicycle:6
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START ft4
+	kt-elektronik/go-redis STEP_START ft4
 	res4, err := rdb.FTSearch(ctx,
 		"idx:bicycle", "%optamized%",
 	).Result()
@@ -292,15 +292,15 @@ func ExampleClient_query_ft() {
 		panic(err)
 	}
 
-	fmt.Println(res4.Total) // >>> 1
+	fmt.Println(res4.Total) kt-elektronik/go-redis >>> 1
 
 	for _, doc := range res4.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:3
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:3
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START ft5
+	kt-elektronik/go-redis STEP_START ft5
 	res5, err := rdb.FTSearch(ctx,
 		"idx:bicycle", "%%optamised%%",
 	).Result()
@@ -309,25 +309,25 @@ func ExampleClient_query_ft() {
 		panic(err)
 	}
 
-	fmt.Println(res5.Total) // >>> 1
+	fmt.Println(res5.Total) kt-elektronik/go-redis >>> 1
 
 	for _, doc := range res5.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:3
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:3
+	kt-elektronik/go-redis STEP_END
 
-	// Output:
-	// 2
-	// bicycle:1
-	// bicycle:2
-	// 1
-	// bicycle:4
-	// 2
-	// bicycle:4
-	// bicycle:6
-	// 1
-	// bicycle:3
-	// 1
-	// bicycle:3
+	kt-elektronik/go-redis Output:
+	kt-elektronik/go-redis 2
+	kt-elektronik/go-redis bicycle:1
+	kt-elektronik/go-redis bicycle:2
+	kt-elektronik/go-redis 1
+	kt-elektronik/go-redis bicycle:4
+	kt-elektronik/go-redis 2
+	kt-elektronik/go-redis bicycle:4
+	kt-elektronik/go-redis bicycle:6
+	kt-elektronik/go-redis 1
+	kt-elektronik/go-redis bicycle:3
+	kt-elektronik/go-redis 1
+	kt-elektronik/go-redis bicycle:3
 }

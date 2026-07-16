@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/redis/go-redis/v9/auth"
-	"github.com/redis/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/auth"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
 )
 
 // Test that Listener returns the newly created listener, not nil

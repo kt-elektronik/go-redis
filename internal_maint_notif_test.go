@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal/pool"
-	"github.com/redis/go-redis/v9/maintnotifications"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/maintnotifications"
 )
 
 // TestInitConnNilMaintNotificationsConfig is a regression test for
-// https://github.com/redis/go-redis/issues/3675
+// https://github.com/kt-elektronik/go-redis/issues/3675
 //
 // initConn previously accessed MaintNotificationsConfig.EndpointType
 // unconditionally, even though the preceding line correctly nil-checked

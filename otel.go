@@ -5,8 +5,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal/otel"
-	"github.com/redis/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/internal/otel"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
 )
 
 // ConnInfo provides information about a Redis connection for metrics.

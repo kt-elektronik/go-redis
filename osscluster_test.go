@@ -14,9 +14,9 @@ import (
 
 	. "github.com/bsm/ginkgo/v2"
 	. "github.com/bsm/gomega"
-	"github.com/redis/go-redis/v9"
-	"github.com/redis/go-redis/v9/internal/hashtag"
-	"github.com/redis/go-redis/v9/internal/routing"
+	"github.com/kt-elektronik/go-redis/v9"
+	"github.com/kt-elektronik/go-redis/v9/internal/hashtag"
+	"github.com/kt-elektronik/go-redis/v9/internal/routing"
 )
 
 type clusterScenario struct {

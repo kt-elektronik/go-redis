@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal"
-	"github.com/redis/go-redis/v9/internal/otel"
-	"github.com/redis/go-redis/v9/internal/pool"
-	"github.com/redis/go-redis/v9/internal/proto"
-	"github.com/redis/go-redis/v9/push"
+	"github.com/kt-elektronik/go-redis/v9/internal"
+	"github.com/kt-elektronik/go-redis/v9/internal/otel"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/internal/proto"
+	"github.com/kt-elektronik/go-redis/v9/push"
 )
 
 // PubSub implements Pub/Sub commands as described in

@@ -10,7 +10,7 @@ import (
 	"go.opentelemetry.io/otel/metric"
 	"go.opentelemetry.io/otel/semconv/v1.38.0/dbconv"
 
-	"github.com/redis/go-redis/v9"
+	"github.com/kt-elektronik/go-redis/v9"
 )
 
 // Metric name constants
@@ -90,7 +90,7 @@ func (o *ObservabilityInstance) Init(cfg *Config) error {
 	}
 
 	meter := meterProvider.Meter(
-		"github.com/redis/go-redis",
+		"github.com/kt-elektronik/go-redis",
 		metric.WithInstrumentationVersion(redis.Version()),
 	)
 

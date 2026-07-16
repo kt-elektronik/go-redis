@@ -6,8 +6,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal/interfaces"
-	"github.com/redis/go-redis/v9/push"
+	"github.com/kt-elektronik/go-redis/v9/internal/interfaces"
+	"github.com/kt-elektronik/go-redis/v9/push"
 )
 
 // ErrInvalidCommand is returned when an invalid command is passed to ExecuteCommand.

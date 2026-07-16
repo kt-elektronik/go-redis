@@ -6,8 +6,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal"
-	"github.com/redis/go-redis/v9/internal/maintnotifications/logs"
+	"github.com/kt-elektronik/go-redis/v9/internal"
+	"github.com/kt-elektronik/go-redis/v9/internal/maintnotifications/logs"
 )
 
 // CircuitBreakerState represents the state of a circuit breaker

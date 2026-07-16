@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/redis/go-redis/v9/maintnotifications"
+	"github.com/kt-elektronik/go-redis/v9/maintnotifications"
 )
 
 func TestParseURL(t *testing.T) {

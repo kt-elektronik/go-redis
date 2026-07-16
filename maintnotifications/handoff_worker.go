@@ -8,9 +8,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal"
-	"github.com/redis/go-redis/v9/internal/maintnotifications/logs"
-	"github.com/redis/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/internal"
+	"github.com/kt-elektronik/go-redis/v9/internal/maintnotifications/logs"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
 )
 
 // PoolNameMain is the name used for the main connection pool in metrics.

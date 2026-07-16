@@ -1,5 +1,5 @@
-// EXAMPLE: query_geo
-// HIDE_START
+kt-elektronik/go-redis EXAMPLE: query_geo
+kt-elektronik/go-redis HIDE_START
 package example_commands_test
 
 import (
@@ -15,16 +15,16 @@ func ExampleClient_query_geo() {
 
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
-		Password: "", // no password docs
-		DB:       0,  // use default DB
+		Password: "", kt-elektronik/go-redis no password docs
+		DB:       0,  kt-elektronik/go-redis use default DB
 		Protocol: 2,
 	})
-	// HIDE_END
-	// REMOVE_START
-	// start with fresh database
+	kt-elektronik/go-redis HIDE_END
+	kt-elektronik/go-redis REMOVE_START
+	kt-elektronik/go-redis start with fresh database
 	rdb.FlushDB(ctx)
 	rdb.FTDropIndex(ctx, "idx:bicycle")
-	// REMOVE_END
+	kt-elektronik/go-redis REMOVE_END
 
 	_, err := rdb.FTCreate(ctx, "idx:bicycle",
 		&redis.FTCreateOptions{
@@ -233,7 +233,7 @@ func ExampleClient_query_geo() {
 		}
 	}
 
-	// STEP_START geo1
+	kt-elektronik/go-redis STEP_START geo1
 	res1, err := rdb.FTSearchWithArgs(ctx,
 		"idx:bicycle", "@store_location:[$lon $lat $radius $units]",
 		&redis.FTSearchOptions{
@@ -251,15 +251,15 @@ func ExampleClient_query_geo() {
 		panic(err)
 	}
 
-	fmt.Println(res1.Total) // >>> 1
+	fmt.Println(res1.Total) kt-elektronik/go-redis >>> 1
 
 	for _, doc := range res1.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:5
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:5
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START geo2
+	kt-elektronik/go-redis STEP_START geo2
 	res2, err := rdb.FTSearchWithArgs(ctx,
 		"idx:bicycle",
 		"@pickup_zone:[CONTAINS $bike]",
@@ -275,15 +275,15 @@ func ExampleClient_query_geo() {
 		panic(err)
 	}
 
-	fmt.Println(res2.Total) // >>> 1
+	fmt.Println(res2.Total) kt-elektronik/go-redis >>> 1
 
 	for _, doc := range res2.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:5
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:5
+	kt-elektronik/go-redis STEP_END
 
-	// STEP_START geo3
+	kt-elektronik/go-redis STEP_START geo3
 	res3, err := rdb.FTSearchWithArgs(ctx,
 		"idx:bicycle",
 		"@pickup_zone:[WITHIN $europe]",
@@ -299,7 +299,7 @@ func ExampleClient_query_geo() {
 		panic(err)
 	}
 
-	fmt.Println(res3.Total) // >>> 5
+	fmt.Println(res3.Total) kt-elektronik/go-redis >>> 5
 
 	sort.Slice(res3.Docs, func(i, j int) bool {
 		return res3.Docs[i].ID < res3.Docs[j].ID
@@ -308,22 +308,22 @@ func ExampleClient_query_geo() {
 	for _, doc := range res3.Docs {
 		fmt.Println(doc.ID)
 	}
-	// >>> bicycle:5
-	// >>> bicycle:6
-	// >>> bicycle:7
-	// >>> bicycle:8
-	// >>> bicycle:9
-	// STEP_END
+	kt-elektronik/go-redis >>> bicycle:5
+	kt-elektronik/go-redis >>> bicycle:6
+	kt-elektronik/go-redis >>> bicycle:7
+	kt-elektronik/go-redis >>> bicycle:8
+	kt-elektronik/go-redis >>> bicycle:9
+	kt-elektronik/go-redis STEP_END
 
-	// Output:
-	// 1
-	// bicycle:5
-	// 1
-	// bicycle:5
-	// 5
-	// bicycle:5
-	// bicycle:6
-	// bicycle:7
-	// bicycle:8
-	// bicycle:9
+	kt-elektronik/go-redis Output:
+	kt-elektronik/go-redis 1
+	kt-elektronik/go-redis bicycle:5
+	kt-elektronik/go-redis 1
+	kt-elektronik/go-redis bicycle:5
+	kt-elektronik/go-redis 5
+	kt-elektronik/go-redis bicycle:5
+	kt-elektronik/go-redis bicycle:6
+	kt-elektronik/go-redis bicycle:7
+	kt-elektronik/go-redis bicycle:8
+	kt-elektronik/go-redis bicycle:9
 }

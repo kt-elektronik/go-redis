@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/redis/go-redis/v9/internal"
+	"github.com/kt-elektronik/go-redis/v9/internal"
 )
 
 type LogLevelT = internal.LogLevelT

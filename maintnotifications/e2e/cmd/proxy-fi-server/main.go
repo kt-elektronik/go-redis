@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	e2e "github.com/redis/go-redis/v9/maintnotifications/e2e"
+	e2e "github.com/kt-elektronik/go-redis/v9/maintnotifications/e2e"
 )
 
 func main() {

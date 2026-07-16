@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/redis/go-redis/v9/internal/hashtag"
+	"github.com/kt-elektronik/go-redis/v9/internal/hashtag"
 )
 
 type SortedSetCmdable interface {

@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/redis/go-redis/v9/auth"
-	"github.com/redis/go-redis/v9/internal/pool"
-	"github.com/redis/go-redis/v9/internal/proto"
+	"github.com/kt-elektronik/go-redis/v9/auth"
+	"github.com/kt-elektronik/go-redis/v9/internal/pool"
+	"github.com/kt-elektronik/go-redis/v9/internal/proto"
 
 	. "github.com/bsm/ginkgo/v2"
 	. "github.com/bsm/gomega"
@@ -850,7 +850,7 @@ func TestOnCloseHooks_ConcurrentRegisterSameID(t *testing.T) {
 
 
 // entraidLikeProvider mimics the exact semantics of
-// github.com/redis/go-redis-entraid's StreamingCredentialsProvider relevant
+// github.com/kt-elektronik/go-redis-entraid's StreamingCredentialsProvider relevant
 // to issue #3772: it deduplicates subscriptions by listener pointer
 // identity, and every call to Subscribe returns a FRESH UnsubscribeFunc
 // closure that removes the listener by pointer match from the shared

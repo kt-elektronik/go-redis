@@ -3,8 +3,8 @@ package redis
 import (
 	"context"
 
-	"github.com/redis/go-redis/v9/internal/proto"
-	"github.com/redis/go-redis/v9/internal/util"
+	"github.com/kt-elektronik/go-redis/v9/internal/proto"
+	"github.com/kt-elektronik/go-redis/v9/internal/util"
 )
 
 type TimeseriesCmdable interface {

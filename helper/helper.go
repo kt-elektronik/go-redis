@@ -1,7 +1,7 @@
 package helper
 
 import (
-	"github.com/redis/go-redis/v9/internal/util"
+	"github.com/kt-elektronik/go-redis/v9/internal/util"
 	"github.com/zeebo/xxh3"
 )
 

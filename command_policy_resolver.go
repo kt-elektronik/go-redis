@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/redis/go-redis/v9/internal/routing"
+	"github.com/kt-elektronik/go-redis/v9/internal/routing"
 )
 
 type (
