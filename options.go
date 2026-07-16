@@ -814,8 +814,8 @@ func newPubSubPool(
 		ConnMaxIdleTime:          opt.ConnMaxIdleTime,
 		ConnMaxLifetime:          opt.ConnMaxLifetime,
 		ConnMaxLifetimeJitter:    opt.ConnMaxLifetimeJitter,
-		ReadBufferSize:           32 * 1024,
-		WriteBufferSize:          32 * 1024,
+		ReadBufferSize:           opt.ReadBufferSize,
+		WriteBufferSize:          opt.WriteBufferSize,
 		PushNotificationsEnabled: opt.Protocol == 3,
 		Name:                     poolName,
 	}, dialer), nil
